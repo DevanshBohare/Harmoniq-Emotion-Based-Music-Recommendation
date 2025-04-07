@@ -267,7 +267,7 @@ model.add(Dropout(0.5))
 model.add(Dense(7, activation='softmax'))
 
 
-model.load_weights('C:\\Users\\Devan\\Desktop\\emotion\\ok\\model.h5')
+model.load_weights('C:\\Users\\Devan\\Desktop\\emotion\\ok\\Dev_trained.h5')
 
 emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
@@ -276,7 +276,7 @@ cv2.ocl.setUseOpenCL(False)
 cap = cv2.VideoCapture(0)
 
 print("Loading Haarcascade Classifier...")
-face = cv2.CascadeClassifier('C:\\Users\\Devan\\Desktop\\emotion\\ok\\haarcascade_frontalface_default.xml')
+face = cv2.CascadeClassifier('C:\\Users\\Devan\\Desktop\\emotion\\ok\\Dev_try36.xml')
 if face.empty():
     print("Haarcascade Classifier failed to load.")
 else:
@@ -287,7 +287,7 @@ else:
 # App header with logo
 st.markdown("<div class='header'>", unsafe_allow_html=True)
 st.image("https://cdn-icons-png.flaticon.com/512/2721/2721620.png", width=100)
-st.markdown("<h1 style='text-align: center; color: #333;'>MoodTunes</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #333;'>Harmoniq</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #666;'>Your personal emotion-based music assistant</p>", unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)
 
@@ -379,5 +379,5 @@ with st.container():
     st.markdown("</div>", unsafe_allow_html=True)  # Close chat container
 
 # Footer
-st.markdown("<div class='footer'>🎶 MoodTunes - Music for every emotion</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>🎶 Harmoniq </div>", unsafe_allow_html=True)
 
