@@ -10,15 +10,10 @@ from tensorflow.keras.layers import Dense, Dropout, Flatten
 from tensorflow.keras.layers import Conv2D
 from tensorflow.keras.layers import MaxPooling2D
 import base64
-
-# Importing modules
 import numpy as np
 import streamlit as st
 import cv2
-# ... [other imports] ...
 
-
-# Add this right after your imports at the very top
 st.markdown("""
 <style>
     /* Main container */
@@ -115,7 +110,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Initialize session state for song recommendations
 if 'new_df' not in st.session_state:
     st.session_state.new_df = pd.DataFrame(columns=['name', 'emotional', 'pleasant', 'link', 'artist'])
 
@@ -282,7 +276,6 @@ if face.empty():
 else:
     print("Haarcascade Classifier loaded successfully.")
 
-# Replace everything from page_bg_img to the column definitions with this:
 
 # App header with logo
 st.markdown("<div class='header'>", unsafe_allow_html=True)
@@ -294,7 +287,6 @@ st.markdown("</div>", unsafe_allow_html=True)
 # Initialize empty list for emotions
 if 'emotion_list' not in st.session_state:
     st.session_state.emotion_list = []
-# Replace everything from col1, col2, col3 definition to the end with this:
 
 def convert_spotify_api_url(api_url):
     """Convert Spotify API URL to regular web player URL"""
@@ -318,7 +310,6 @@ with st.container():
     # Emotion scanning button
     if st.button('🎤 Scan My Emotions', key='scan_button'):
         with st.spinner('Analyzing your emotions...'):
-            # Your existing emotion detection code
             count = 0
             st.session_state.emotion_list.clear()
             
@@ -353,7 +344,7 @@ with st.container():
             cap.release()
             cv2.destroyAllWindows()
 
-            # Process emotions and get recommendations
+            # Processing emotions and getting recommendations
             processed_emotions = pre(st.session_state.emotion_list)
             st.session_state.new_df = fun(processed_emotions)
             
